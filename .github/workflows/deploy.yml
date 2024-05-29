@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # Node.js 20 지원
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v4  # Node.js 20 지원
       with:
         python-version: '3.x'
 
@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Login to Azure
-      uses: azure/login@v1
+      uses: azure/login@v1  # Node.js 20 지원
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
