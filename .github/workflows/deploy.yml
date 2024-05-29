@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Login to Azure
-      uses: azure/login@v1  # Node.js 20 지원
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
@@ -34,5 +34,6 @@ jobs:
         app-name: 예인배송  # 정확한 앱 서비스 이름 입력
         slot-name: production
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-1
 
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4  # Node.js 20 지원
